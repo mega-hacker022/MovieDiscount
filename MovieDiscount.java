@@ -19,21 +19,26 @@ public class MovieDiscount {
         boolean coupon = input.nextBoolean();
 
         // Print the cost of a movie ticket
+        // Check if they are a child or a senior
         if (age <= 13 || age >= 65) {
+        	// Check if they have a coupon too
         	if (coupon == true) {
-        		System.out.println("Your ticket costs $9.50.");
+        		System.out.println("Your ticket costs $9.5.");
         	}
+        	// If they don't have a coupon then print their cost
         	else {
-        	 System.out.println("Your ticket costs $11.50.");
+        	 System.out.println("Your ticket costs $11.5.");
         	}
         }
         
-        if ((age > 13 && age < 65)&& coupon == true) {	
-        	System.out.println("Your ticket costs $12.50.");
+        // Check if they are between 13 and 65, and if they have a coupon too
+        else if ((age > 13 && age < 65)&& coupon == true) {	
+        	System.out.println("Your ticket costs $12.5.");
         }
         
-        if ((age > 13 && age < 65)&& coupon == false) {
-        	System.out.print("Your ticket costs $14.50.");
+        // If they don't have a coupon then they get no discounts
+        else if ((age > 13) && (age < 65)&& coupon == false) {
+        	System.out.print("Your ticket costs $14.5.");
         }
     }
 }
